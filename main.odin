@@ -37,7 +37,7 @@ main :: proc() {
     first_op := true
 
     strings.builder_init_len(&painel_builder, 0)
-    defer delete(painel_builder.buf)
+    defer strings.builder_destroy(painel_builder)
 
     strings.write_string(&painel_builder, "00.00\x00") 
 
